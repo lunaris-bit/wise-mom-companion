@@ -12,7 +12,7 @@ try:
     api_key = st.secrets["GOOGLE_API_KEY"]
     genai.configure(api_key=api_key)
     # Kita pakai gemini-1.5-flash karena paling stabil dan cepat
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    model = model = genai.GenerativeModel('gemini-1.5-flash-latest')
 except Exception as e:
     st.error(f"Gagal memuat API Key: {e}")
     st.stop()
