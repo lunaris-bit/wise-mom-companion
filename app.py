@@ -10,7 +10,7 @@ st.write("Teman bijak Bunda untuk menjawab pertanyaan si kecil dengan tenang dan
 try:
     api_key = st.secrets["GOOGLE_API_KEY"]
     genai.configure(api_key=api_key)
-    # Pakai model yang sudah terbukti jalan di akun Kakak
+    # Model stabil yang sudah terbukti jalan di sistem Kakak
     model = genai.GenerativeModel('gemini-3.5-flash')
 except Exception as e:
     st.error(f"Gagal memuat API Key atau Model: {e}")
@@ -37,9 +37,10 @@ if st.button("✨ Temukan Jawaban Bijak"):
                 
                 response = model.generate_content(prompt)
                 
-                # Menampilkan hasil di text_area agar mudah di-copy
+                # Menampilkan hasil dengan rapi (tanpa kotak text_area)
                 st.markdown("---")
-                st.text_area("💬 Skrip Jawaban Bunda (Klik lalu Copy):", value=response.text, height=300)
+                st.success("💬 **Skrip Jawaban Bunda:**")
+                st.write(response.text)
                 
             except Exception as e:
                 st.error(f"Waduh, ada error teknis nih. Pesan errornya: {e}")
