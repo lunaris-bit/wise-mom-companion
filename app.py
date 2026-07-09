@@ -6,6 +6,7 @@ st.set_page_config(page_title="Wise Mom Companion", page_icon="👩‍👧‍�
 st.logo("https://img.icons8.com/color/96/mommy.png")
 st.title("👩‍👧‍👦 The Wise Mom Companion")
 st.write("Teman bijak Bunda untuk menjawab pertanyaan si kecil dengan tenang dan santun.")
+st.text_area("Hasil Jawaban (Klik lalu Copy):", value=response.text, height=300)
 
 # Konfigurasi API Gemini
 try:
