@@ -2,17 +2,15 @@ import streamlit as st
 import google.generativeai as genai
 
 # Konfigurasi Halaman
-st.set_page_config(page_title="Wise Mom Companion", page_icon="👩‍👧‍👦")# Tambahkan logo (bisa berupa link gambar dari internet atau file lokal)
-st.logo("https://img.icons8.com/color/96/mommy.png")
+st.set_page_config(page_title="Wise Mom Companion", page_icon="👩‍👧‍👦")
 st.title("👩‍👧‍👦 The Wise Mom Companion")
 st.write("Teman bijak Bunda untuk menjawab pertanyaan si kecil dengan tenang dan santun.")
-st.text_area("Hasil Jawaban (Klik lalu Copy):", value=response.text, height=300)
 
 # Konfigurasi API Gemini
 try:
     api_key = st.secrets["GOOGLE_API_KEY"]
     genai.configure(api_key=api_key)
-    # KITA PAKAI MODEL YANG ADA DI DAFTAR KAKAK:
+    # Pakai model yang sudah terbukti jalan di akun Kakak
     model = genai.GenerativeModel('gemini-3.5-flash')
 except Exception as e:
     st.error(f"Gagal memuat API Key atau Model: {e}")
@@ -39,9 +37,9 @@ if st.button("✨ Temukan Jawaban Bijak"):
                 
                 response = model.generate_content(prompt)
                 
+                # Menampilkan hasil di text_area agar mudah di-copy
                 st.markdown("---")
-                st.success("💬 **Skrip Jawaban Bunda:**")
-                st.write(response.text)
+                st.text_area("💬 Skrip Jawaban Bunda (Klik lalu Copy):", value=response.text, height=300)
                 
             except Exception as e:
                 st.error(f"Waduh, ada error teknis nih. Pesan errornya: {e}")
