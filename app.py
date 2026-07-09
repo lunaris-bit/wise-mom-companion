@@ -2,7 +2,8 @@ import streamlit as st
 import google.generativeai as genai
 
 # Konfigurasi Halaman
-st.set_page_config(page_title="Wise Mom Companion", page_icon="👩‍👧‍👦")
+st.set_page_config(page_title="Wise Mom Companion", page_icon="👩‍👧‍👦")# Tambahkan logo (bisa berupa link gambar dari internet atau file lokal)
+st.logo("https://img.icons8.com/color/96/mommy.png")
 st.title("👩‍👧‍👦 The Wise Mom Companion")
 st.write("Teman bijak Bunda untuk menjawab pertanyaan si kecil dengan tenang dan santun.")
 
