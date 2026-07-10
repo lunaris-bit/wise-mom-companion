@@ -17,7 +17,6 @@ if st.button("✨ Temukan Jawaban Bijak"):
                 Anak usia: {usia}
                 Situasi/Pertanyaan: {pertanyaan}
                 """
-                # Memanggil dari core.ai_handler
                 jawaban = get_ai_response(prompt)
                 
                 st.markdown("---")
