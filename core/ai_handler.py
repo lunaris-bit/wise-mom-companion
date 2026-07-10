@@ -2,5 +2,9 @@ import google.generativeai as genai
 import streamlit as st
 
 def get_ai_response(prompt):
-    # INI HANYA UNTUK TESTING (SUPAYA TIDAK KENA LIMIT)
-    return "Jawaban simulasi: Ini adalah jawaban dari Wise Mom Companion (Mode Testing). AI sedang istirahat supaya kuota aman."
+    # SIMULASI PROFESSIONAL (UNTUK TESTING)
+    return (
+        "Halo Bunda. Saat ini Wise Mom sedang meracik jawaban terbaik untuk Bunda. "
+        "Mohon tunggu sejenak ya, kami sedang memastikan setiap kata yang diberikan "
+        "adalah yang terbaik untuk mendukung Bunda dan si kecil dalam menghadapi situasi ini."
+    )
